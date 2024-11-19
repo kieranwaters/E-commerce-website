@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Olympic dumbell</title>
+        <h1>Olympic dumbell</h1>
+            <div class="image-container">
+            <img src="Images/dumebll1.jpg" alt="loading dumbell image" class="visible" width ="500" height = "500">
+            <img src="Images/dumbell 2.jpg" alt="loading dumbell image">
+            <img src="images/dumbell3.jpg" alt="loading dumbell image">
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">Elevate your weight training with this pair of RIP Olympic Dumbbell Bars.  These bars are 51.5cm long and feature a 2.8cm diameter knurled grip for a secure and comfortable hold during your workouts. The 15cm sleeves on each bar are compatible with standard 2-inch Olympic weight plates (not included). Spring clip collars are included to keep your weights securely fastened. 
+            Made from solid steel with a chrome finish, these dumbbell bars are built for long-lasting durability.  Whether you're a beginner or a seasoned lifter, these versatile dumbbells can help you achieve your fitness goals.
+            </p>
+            <p>1 x Pair of Dumbells</p>
+            <p id="dumbell-price">Price £<span id="dumbell-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const dumbellPrice = getProductPrice("Dumbell");
+            document.getElementById("dumbell-price").textContent = dumbellPrice !== null ? `£${dumbellPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Dumbell', getProductPrice('Dumbell'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div> 
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

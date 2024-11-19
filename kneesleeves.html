@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Knee sleeves</title>
+        <h1>Knee sleeves</h1>
+            <div class="image-container">
+            <img src="Images/kneesleeves1.jpg" alt="loading knee sleeves" class="visible" width ="500" height = "500">
+            <img src="Images/kneesleeves2.jpg" alt="loading knee sleeves">
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text"> These Jupiter knee sleeves are designed for weightlifting and squatting with 7mm thick neoprene for strong, comfortable support. The breathable material offers 3D support for your knees without restricting movement. They come in various styles to suit your preference and are made with high-quality, durable materials that won't slip or tear during exercise. The neoprene helps compress your knee joint, promoting blood flow and recovery after workouts. Additionally, it provides cushioning and reduces pain and swelling caused by intense training. With a one-year warranty, Jupiter knee sleeves aim for your satisfaction, promising solutions for any problems you might encounter.
+            </p>
+            <p>1 x Knee Sleeves</p>
+            <p id="kneesleeves-price">Price £<span id="kneesleeves-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const kneesleevesPrice = getProductPrice("Knee Sleeves");
+            document.getElementById("kneesleeves-price").textContent = kneesleevesPrice !== null ? `£${kneesleevesPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Knee Sleeves', getProductPrice('Knee Sleeves'), 1)">Add to Basket</button>
+        <h2 id="cart-design">Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div>  
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

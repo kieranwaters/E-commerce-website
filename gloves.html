@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Weightlifting gloves</title>
+        <h1>Weightlifting gloves</h1>
+            <div class="image-container">
+            <img src="Images/gloves1.jpg" alt="loading gloves" class="visible" width ="500" height = "500">
+            <img src="Images/gloves2.jpg" alt="loading gloves">
+            <img src="Images/gloves3.jpg" alt="loading gloves">
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">These weightlifting gloves for men and women are designed for comfort and functionality during your workouts. The half-finger design with padded palms and silicone grips allows for a secure hold on weights while cushioning your hands. The unique detachable strap allows you to choose between keeping an eye on your wristwear or adding extra wrist support for heavier lifting. The breathable fabric and sweat-wicking material ensure your hands stay cool and dry throughout your exercise routine. Easy-to-use pull tabs and quick-touch fasteners make taking the gloves off a breeze after a tough workout.
+            These gloves are built to last, with a resilient material suitable for various exercises like deadlifts, powerlifting, rows, and pulldowns. Note that small and medium sizes are recommended for users up to 14 years old
+            </p>
+            <p>1 x Pair of Gloves</p>
+            <p id="gloves-price">Price £<span id="gloves-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const glovesPrice = getProductPrice("Gloves");
+            document.getElementById("gloves-price").textContent = glovesPrice !== null ? `£${glovesPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Gloves', getProductPrice('Gloves'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div>  
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a> 
+        </body>
+</html>

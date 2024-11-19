@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Weight plate set + rack</title>
+        <h1>Weight plate set + rack</h1>
+            <div class="image-container">
+            <img src="Images/weightset1.jpg" alt="loading weight set image" class="visible" width ="500" height = "500">
+            <img src="Images/weightset2.jpg" alt="loading weight set image">
+            <img src="Images/weightset3.jpg" alt="loading weight set image">
+            <img src="Images/weightset4.jpg" alt="loading weight set image">
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">The Mirafit 150kg Black Bumper Plates Set with Storage Trolley is a complete weightlifting set that includes everything you need for a variety of strength training exercises. The set includes 150kg of bumper plates in various weights (from 5kg to 25kg) to allow you to progressively increase the weight as you get stronger. The bumper plates are made of solid rubber with a stainless steel center ring, making them durable and safe for use on Olympic barbells. The set also includes fractional change plates in weights from 0.5kg to 2.5kg, which allow you to micro-adjust the weight for even more precise training.
+            The set comes with a portable storage trolley rack for easy organization and movement. The trolley rack has wheels and a handle for easy transportation around your gym or home workout area. The bumper plates have a diameter of 45cm and their thickness varies depending on the weight.
+            </p>
+            <p>1 x Weight Plate Set</p>
+            <p id="weightplateset-price">Price £<span id="weightplateset-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const weightplatesetPrice = getProductPrice("Weight Plate Set");
+            document.getElementById("weightplateset-price").textContent = weightplatesetPrice !== null ? `£${weightplatesetPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Weight Plate Set', getProductPrice('Weight Plate Set'), 1)">Add to Basket</button>
+            <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div>
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>  
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>    
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Weightlifting Belt</title>
+        <h1>Weightlifting Belt</h1>
+            <div class="image-container">
+            <img src="Images/belt1.jpg" alt="loading weight lifting belt" class="visible" width ="500" height = "500">
+            <img src="images/belt2.jpg" alt="loading weight lifting belt">
+            <img src="Images/belt3.jpg" alt="loading weight lifting belt">
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">This weightlifting belt is made for durability and comfort, to help you reach your full potential during workouts. The 7mm thick genuine cowhide leather absorbs and manages pressure, while the wide padded back with a suede inner lining provides excellent lumbar support and keeps you comfortable throughout your exercise routine. The belt 6-inches wide, and the adjustable roller buckle with twin prongs ensures a secure fit that won't slip or ride up. Reinforced rivets and 10 precision-drilled holes allow for fine-tuning the tightness for optimal support. This unisex belt is ideal for training, deadlifting, squatting, Olympic lifting, and cross-training, helping you perform at your best.
+            </p>
+            <p>1 x Weightlifting Belt</p>
+            <p id="belt-price">Price £<span id="belt-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const beltPrice = getProductPrice("Belt");
+            document.getElementById("belt-price").textContent = beltPrice !== null ? `£${beltPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Belt', getProductPrice('Belt'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div> 
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

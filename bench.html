@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body> 
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Weightlifting bench</title>
+        <h1>Weightlifting bench</h1>
+            <div class="image-container">
+            <img src="Images/bench1.jpg" alt="loading weightlifting bench image" class="visible" width ="500" height = "500">
+            <img src="images/bench2.jpg" alt="loading weightlifting bench image" >
+            <img src="Images/bench3.jpg" alt="loading weightlifting bench image" >
+            <img src="images/bench4.jpg" alt="loading weightlifting bench image" >
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">This WINNOW 4-in-1 multi-function weight bench is a versatile home gym equipment that allows for various full-body workouts. It features an adjustable barbell rest with pull-up grips to accommodate different exercise needs. The cushions comfortably switch between incline, decline, and flat positions for exercises like bench press, push-ups, leg raises, and ab work. The dip station further expands your workout options.
+            This space-saving bench folds conveniently for easy storage after use.  The wide design ensures unrestricted movement during lifting, while the non-slip rubber feet protect your floor. Whether you're a beginner or a more advanced user, this weight bench can be a valuable addition to your home gym.
+            </p>
+            <p>1 x Weightlifting Bench</p>
+            <p id="bench-price">Price £<span id="bench-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const benchPrice = getProductPrice("Bench");
+            document.getElementById("bench-price").textContent = benchPrice !== null ? `£${benchPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Bench', getProductPrice('Bench'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div> 
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

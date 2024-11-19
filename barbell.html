@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Olympic barbell</title>
+        <h1>Olympic barbell</h1>
+            <div class="image-container">
+            <img src="Images/barbell 1.jpg" alt="loading barbell image" class="visible" width ="500" height = "500">
+            <img src="Images/barbell 2.jpg" alt="Barbell Image 2" >
+            <img src="Images/barbell 3.jpg" alt="Barbell Image 3" >
+            <img src="Images/barbell 4.jpg" alt="Barbell Image 3" >
+            </div>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">The Mirafit M3 Hybrid is a 7ft, 20kg Olympic barbell designed for weightlifting exercises, powerlifting, and general gym use. It's made from sprung steel with a black zinc coated center and hard chrome sleeves for durability. The barbell features a hybrid grip pattern with dual knurled marks for hand positioning and no knurling in the center for squats. It's suitable for use with standard 2" Olympic weight plates but not certified for competitions.
+             This barbell boasts a weight capacity of 680kg (1500lb) and a tensile strength of 218k psi. Other features include bronze bushings, eight-piece needle bearings, and branded rubber inserts with end caps.
+            </p>
+            <p>1 x Olympic Barbell</p>
+            <p id="barbell-price">Price £<span id="barbell-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const barbellPrice = getProductPrice("Barbell");
+            document.getElementById("barbell-price").textContent = barbellPrice !== null ? `£${barbellPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Barbell', getProductPrice('Barbell'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+        <div id="cart-container">
+        <p>Items: <span id="cart-count">0</span></p>
+        <p><span id="cart-items">0</span></p>      
+        <p>Total: £<span id="cart-total">0.00</span></p>
+        </div> 
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>

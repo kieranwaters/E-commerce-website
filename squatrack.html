@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="basket.js" defer></script>
+        <script src="products.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">       
+    </head>
+    <body>    
+        <a href="index.html"><button id="homebutton">Homepage</button></a>      
+        <title>Squat Rack</title>
+        <h1>Squat Rack</h1>
+            <div class="image-container">
+            <img src="Images/squatrack1.jpg" alt="loading squat rack image" class="visible" width ="500" height = "500">
+            <img src="Images/squatrack2.jpg" alt="loading squat rack image">
+            <img src="Images/squatrack3.jpg" alt="loading squat rack image"> 
+            </div>
+            <p><p><p><p><p></p></p></p></p>
+            <button onclick="previousImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+            <p class="text">This PASYOU SR30 squat rack boasts superior sturdiness and safety features, making it ideal for your home gym.
+            The heavy-duty steel frame and multiple safety features ensure a stable workout environment.  With a maximum supported weight of 600 lbs on the J-hooks and 1800 lbs on the bumpers, it can handle most users' needs. Features like screw-locked anti-slip pads and multiple J-hook and bumper positions provide secure placements for barbells at various heights.  This versatile rack allows for squats, bench press, and various other exercises. Additional features include anti-slip floor pads and barbell plate storage columns, making it a well-equipped and user-friendly option for your home gym needs. The PASYOU SR30 comes with a 1-year warranty and reliable customer support for your peace of mind.
+            </p>
+            <p>1 x Squat Rack</p>
+            <p id="squatrack-price">Price £<span id="squatrack-price-value"></span></p>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const squatrackPrice = getProductPrice("Squat Rack");
+            document.getElementById("squatrack-price").textContent = squatrackPrice !== null ? `£${squatrackPrice.toFixed(2)}` : "Product not found";
+            });
+            </script>
+            <button onclick="addToCart('Squat Rack', getProductPrice('Squat Rack'), 1)">Add to Basket</button>
+        <h2>Shopping Cart</h2>
+            <div id="cart-container">
+            <p>Items: <span id="cart-count">0</span></p>
+            <p><span id="cart-items">0</span></p> 
+            <p>Total: £<span id="cart-total">0.00</span></p>
+            </div> 
+            <p><p><p></p></p></p>
+            <a href="purchasepage.html"><button>View Basket</button></a>
+            <p><p><p><p></p></p></p></p>
+            <a href="purchasepage.html"><button class="buy-now-button">Go to Checkout</button></a>
+    </body>
+</html>
